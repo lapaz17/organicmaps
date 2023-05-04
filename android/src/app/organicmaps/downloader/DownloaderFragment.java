@@ -32,6 +32,7 @@ public class DownloaderFragment extends BaseMwmRecyclerFragment<DownloaderAdapte
   @Nullable
   private DownloaderAdapter mAdapter;
 
+  private View mFloatingActionButton;
   private long mCurrentSearch;
   private boolean mSearchRunning;
 
@@ -145,6 +146,9 @@ public class DownloaderFragment extends BaseMwmRecyclerFragment<DownloaderAdapte
 
     mBottomPanel = new BottomPanel(this, view);
     mToolbarController = new DownloaderToolbarController(view, requireActivity(), this);
+
+    mFloatingActionButton = getView().findViewById(R.id.fab);
+    mFloatingActionButton.setAlpha(0.25f);
 
     update();
   }
